@@ -15,6 +15,7 @@ namespace ProjectShop.Model.Models
         [Column(Order = 1)]
         public int ProductID { set; get; }
 
+
         [Key]
         [Column(TypeName = "varchar", Order = 2)]
         [MaxLength(50)]
