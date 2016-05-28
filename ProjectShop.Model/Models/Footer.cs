@@ -7,8 +7,10 @@ namespace ProjectShop.Model.Models
     public class Footer
     {
         [Key]
-        public string ID { get; set; }
+        [MaxLength(50)]
+        public string ID { set; get; }
+
         [Required]
-        public string Content { get; set; }
+        public string Content { set; get; }
     }
 }

@@ -1,16 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectShop.Model.Models
 {
+
     [Table("MenuGroups")]
     public class MenuGroup
     {
         [Key]
-        public int ID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID { set; get; }
 
         [Required]
-        public string Name { get; set; }
+        [MaxLength(50)]
+        public string Name { set; get; }
 
+        public virtual IEnumerable<Menu> Menus { set; get; }
     }
 }

@@ -3,20 +3,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectShop.Model.Models
 {
-    [Table("Tangs")]
+    [Table("Tags")]
     public class Tag
     {
         [Key]
         [MaxLength(50)]
         [Column(TypeName = "varchar")]
-        public string ID { get; set; }
+        public string ID { set; get; }
 
         [MaxLength(50)]
         [Required]
-        public string Name { get; set; }
+        public string Name { set; get; }
 
         [MaxLength(50)]
         [Required]
-        public string Type { get; set; }
+        public string Type { set; get; }
     }
 }
