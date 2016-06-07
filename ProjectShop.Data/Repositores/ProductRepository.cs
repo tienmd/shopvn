@@ -3,11 +3,11 @@ using ProjectShop.Model.Models;
 
 namespace ProjectShop.Data.Repositores
 {
-    public interface IProductRepository
+    public interface IProductRepository : IRepository<Product>
     {
     }
 
-    public class ProductRepository : RepositoryBase<Product>
+    public class ProductRepository : RepositoryBase<Product>,IProductRepository
     {
         public ProductRepository(IDbFactory dbFactory) : base(dbFactory)
         {
