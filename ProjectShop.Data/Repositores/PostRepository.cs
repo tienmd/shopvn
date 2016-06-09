@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TeduShop.Data.Infrastructure;
-using TeduShop.Model.Models;
-using System.Linq;
-using ProjectShop.Data.Infrastructure;
+﻿using ProjectShop.Data.Infrastructure;
 using ProjectShop.Model.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TeduShop.Data.Repositories
 {
