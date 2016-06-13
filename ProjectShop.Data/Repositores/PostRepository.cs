@@ -23,7 +23,7 @@ namespace TeduShop.Data.Repositories
                         on p.ID equals pt.PostID
                         where pt.TagID == tag && p.Status
                         orderby p.CreatedDate descending
-                        select p;
+                        select p;   
 
             totalRow = query.Count();
 
