@@ -2,12 +2,13 @@
 using ProjectShop.Model.Models;
 using System.Collections.Generic;
 using TeduShop.Data.Repositories;
+using System;
 
 namespace ProjectShop.Service
 {
     public interface IPostCategoryService
     {
-        void Add(PostCategory postCategory);
+        PostCategory Add(PostCategory postCategory);
 
         void Update(PostCategory postCategory);
 
@@ -18,6 +19,7 @@ namespace ProjectShop.Service
         IEnumerable<PostCategory> GetAllByParentId(int parentId);
 
         PostCategory GetById(int id);
+        void Save();
     }
 
     public class PostCategoryService : IPostCategoryService
@@ -31,9 +33,9 @@ namespace ProjectShop.Service
             this._unitOfWork = unitOfWork;
         }
 
-        public void Add(PostCategory postCategory)
+        public PostCategory Add(PostCategory postCategory)
         {
-            _postCategoryRepository.Add(postCategory);
+           return _postCategoryRepository.Add(postCategory);
         }
 
         public void Delete(int id)
@@ -54,6 +56,11 @@ namespace ProjectShop.Service
         public PostCategory GetById(int id)
         {
             return _postCategoryRepository.GetSingleById(id);
+        }
+
+        public void Save()
+        {
+            _unitOfWork.Commit();
         }
 
         public void Update(PostCategory postCategory)

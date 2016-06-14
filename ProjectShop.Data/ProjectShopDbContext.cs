@@ -32,8 +32,9 @@ namespace ProjectShop.Data
         public DbSet<SystemConfig> SystemConfigs { set; get; }
 
         public DbSet<Tag> Tags { set; get; }
-
+        public DbSet<Error> Errors { set; get; }
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
+        
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {

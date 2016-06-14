@@ -13,7 +13,7 @@ namespace ProjectShop.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201606060650125_InitialDB"; }
+            get { return "201606140350180_InitialDB"; }
         }
         
         string IMigrationMetadata.Source
