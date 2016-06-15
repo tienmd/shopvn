@@ -11,6 +11,7 @@ namespace ProjectShop.Data.Repositores
     {
         public ErrorRepository(IDbFactory dbFacetory) : base(dbFacetory)
         {
+
         }
     }
 }

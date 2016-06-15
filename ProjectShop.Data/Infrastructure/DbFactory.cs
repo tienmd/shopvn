@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectShop.Data.Infrastructure
 {
-    class DbFactory : Disposable, IDbFactory
+    public class DbFactory : Disposable, IDbFactory
     {
         private ProjectShopDbContext dbContext;
         public ProjectShopDbContext Init()

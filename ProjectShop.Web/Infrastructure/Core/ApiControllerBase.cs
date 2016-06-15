@@ -13,6 +13,7 @@ namespace ProjectShop.Web.Infrastructure.Core
     public class ApiControllerBase : ApiController
     {
         private IErrorService _errorService;
+
         public ApiControllerBase(IErrorService errorService)
         {
             this._errorService = errorService;
@@ -21,7 +22,6 @@ namespace ProjectShop.Web.Infrastructure.Core
         protected HttpResponseMessage CreateHttpResponse(HttpRequestMessage requestMessage, Func<HttpResponseMessage> function)
         {
             HttpResponseMessage response = null;
-
             try
             {
                 response = function.Invoke();
@@ -48,7 +48,6 @@ namespace ProjectShop.Web.Infrastructure.Core
             {
                 LogError(ex);
                 response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
-                
             }
             return response;
         }
@@ -66,8 +65,6 @@ namespace ProjectShop.Web.Infrastructure.Core
             }
             catch
             {
-
-
             }
         }
     }
