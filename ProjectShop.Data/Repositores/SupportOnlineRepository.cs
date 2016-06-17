@@ -1,7 +1,7 @@
 ﻿using ProjectShop.Data.Infrastructure;
 using ProjectShop.Model.Models;
 
-namespace TeduShop.Data.Repositories
+namespace ProjectShop.Data.Repositories
 {
     public interface ISupportOnlineRepository : IRepository<SupportOnline>
     {

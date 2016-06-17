@@ -3,7 +3,7 @@ using ProjectShop.Model.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TeduShop.Data.Repositories
+namespace ProjectShop.Data.Repositories
 {
     public interface IPostRepository : IRepository<Post>
     {

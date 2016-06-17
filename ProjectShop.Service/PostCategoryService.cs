@@ -3,6 +3,7 @@ using ProjectShop.Model.Models;
 using System.Collections.Generic;
 using TeduShop.Data.Repositories;
 using System;
+using ProjectShop.Data.Repositories;
 
 namespace ProjectShop.Service
 {

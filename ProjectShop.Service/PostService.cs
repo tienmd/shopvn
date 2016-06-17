@@ -1,8 +1,7 @@
 ﻿using ProjectShop.Data.Infrastructure;
+using ProjectShop.Data.Repositories;
 using ProjectShop.Model.Models;
-using System;
 using System.Collections.Generic;
-using TeduShop.Data.Repositories;
 
 namespace ProjectShop.Service
 {
@@ -18,24 +17,26 @@ namespace ProjectShop.Service
 
         IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow);
 
-        IEnumerable<Post> GetAllCategoryPaging(int categoryId,int page, int pageSize, out int totalRow);
+        IEnumerable<Post> GetAllCategoryPaging(int categoryId, int page, int pageSize, out int totalRow);
 
         Post GetById(int idx);
 
-        IEnumerable<Post> GetAllByTagPaging(string tag,int page, int pageSize, out int totalRow);
+        IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow);
 
         void SaveChanges();
     }
 
     public class PostService : IPostService
     {
-        IPostRepository _postRepository;
-        IUnitOfWork _unitOfWork;
-        public PostService(IPostRepository postRepository,IUnitOfWork unitOfWork)
+        private IPostRepository _postRepository;
+        private IUnitOfWork _unitOfWork;
+
+        public PostService(IPostRepository postRepository, IUnitOfWork unitOfWork)
         {
             this._postRepository = postRepository;
             this._unitOfWork = unitOfWork;
         }
+
         public void Add(Post post)
         {
             _postRepository.Add(post);
@@ -48,10 +49,10 @@ namespace ProjectShop.Service
 
         public IEnumerable<Post> GetAll()
         {
-            return _postRepository.GetAll(new string[] { "PostCategory"});
+            return _postRepository.GetAll(new string[] { "PostCategory" });
         }
 
-        public IEnumerable<Post> GetAllByTagPaging(string tag,int page, int pageSize, out int totalRow)
+        public IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow)
         {
             //TODO: Select all post by tag
             return _postRepository.GetAllByTag(tag, page, pageSize, out totalRow);
@@ -59,7 +60,7 @@ namespace ProjectShop.Service
 
         public IEnumerable<Post> GetAllCategoryPaging(int categoryId, int page, int pageSize, out int totalRow)
         {
-            return _postRepository.GetMultiPaging(x => x.Status && x.CategoryID == categoryId,out totalRow, page, pageSize, new string[] { "PostCategory" });
+            return _postRepository.GetMultiPaging(x => x.Status && x.CategoryID == categoryId, out totalRow, page, pageSize, new string[] { "PostCategory" });
         }
 
         public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)

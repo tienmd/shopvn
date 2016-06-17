@@ -1,4 +1,5 @@
-﻿using ProjectShop.Model.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using ProjectShop.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProjectShop.Data
 {
-    public class ProjectShopDbContext :DbContext
+    public class ProjectShopDbContext : IdentityDbContext<ApplicationUser>
     {
         public ProjectShopDbContext() : base("ProjectShopConnection")
         {
@@ -33,12 +34,17 @@ namespace ProjectShop.Data
 
         public DbSet<Tag> Tags { set; get; }
         public DbSet<Error> Errors { set; get; }
+        public static ProjectShopDbContext Create()
+        {
+            return new ProjectShopDbContext();
+        }
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-
+            builder.Entity<IdentityUserRole>().HasKey(x => new { x.UserId,x.RoleId });
+            builder.Entity<IdentityUserLogin>().HasKey(x => x.UserId);
         }
     }
 }
