@@ -7,6 +7,7 @@ using ProjectShop.Data;
 using ProjectShop.Model.Models;
 using ProjectShop.Web.App_Start;
 using System;
+using TeduShop.Web.App_Start;
 
 [assembly: OwinStartup(typeof(ProjectShop.Web.App_Start.Startup))]
 

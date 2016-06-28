@@ -16,6 +16,7 @@ using System.Web.Mvc;
 using System.Web.Http;
 using ProjectShop.Service;
 using ProjectShop.Data.Repositories;
+using TeduShop.Web.App_Start;
 
 [assembly: OwinStartup(typeof(ProjectShop.Web.App_Start.Startup))]
 

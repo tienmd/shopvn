@@ -24,7 +24,7 @@ namespace ProjectShop.Web.Api
 
         [Route("getall")]
         [HttpGet]
-        public HttpResponseMessage Get(HttpRequestMessage request)
+        public HttpResponseMessage Get(HttpRequestMessage request) 
         {
             return CreateHttpResponse(request, () =>
             {
