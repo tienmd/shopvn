@@ -14,7 +14,7 @@ namespace ProjectShop.Web.Infrastructure.Extensions
             postCategory.ID = postCategoryVm.ID;
             postCategory.Name = postCategoryVm.Name;
             postCategory.Description = postCategoryVm.Description;
-            postCategory.Alias = postCategoryVm.Description;
+            postCategory.Alias = postCategoryVm.Alias;
             postCategory.ParentID = postCategoryVm.ParentID;
             postCategory.DisplayOrder = postCategoryVm.DisplayOrder;
             postCategory.Image = postCategoryVm.Image;
@@ -53,7 +53,8 @@ namespace ProjectShop.Web.Infrastructure.Extensions
         {
             post.ID = postVm.ID;
             post.Name = postVm.Name;
-            post.Alias = postVm.Description;
+            post.Alias = postVm.Alias;
+            post.Description = postVm.Description;
             post.CategoryID = postVm.CategoryID;
             post.Content = postVm.Content;
             post.Image = postVm.Image;
@@ -68,6 +69,33 @@ namespace ProjectShop.Web.Infrastructure.Extensions
             post.MetaKeyword = postVm.MetaKeyword;
             post.MetaDescription = postVm.MetaDescription;
             post.Status = postVm.Status;
+        }
+
+
+        public static void UpdateProduct(this Product product, ProductViewModel productVm)
+        {
+            product.ID = productVm.ID;
+            product.Name = productVm.Name;
+            product.Alias = productVm.Alias;
+            product.Description = productVm.Description;
+            product.CategoryID = productVm.CategoryID;
+            product.Content = productVm.Content;
+            product.Image = productVm.Image;
+            product.MoreImages = productVm.MoreImages;
+            product.HomeFlag = productVm.HomeFlag;
+            product.HotFlag = productVm.HotFlag;
+            product.ViewCount = productVm.ViewCount;
+            product.Price = productVm.Price;
+            product.PromotionPrice = productVm.PromotionPrice;
+            product.Warranty = productVm.Warranty;
+            //ke thua
+            product.CreatedDate = productVm.CreatedDate;
+            product.CreatedBy = productVm.CreatedBy;
+            product.UpdatedDate = productVm.UpdatedDate;
+            product.UpdatedBy = productVm.UpdatedBy;
+            product.MetaKeyword = productVm.MetaKeyword;
+            product.MetaDescription = productVm.MetaDescription;
+            product.Status = productVm.Status;
         }
 
     }

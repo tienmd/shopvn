@@ -1,12 +1,6 @@
 ﻿/// <reference path="/Assets/admin/libs/angular/angular.js" />
 (function () {
-    angular.module('projectshop',
-        [
-         'projectshop.products',
-         'projectshop.product_Categories',
-         'projectshop.common'
-         
-        ]).config(config);
+    angular.module('projectshop',['projectshop.products','projectshop.product_Categories','projectshop.common']).config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
